@@ -1,19 +1,19 @@
-import { Table } from "../Table";
-import { TableHeader } from "../TableHeader";
-import { TableRow } from "../TableRow";
-import { TableCell } from "./TableCell";
+import { Table } from '../Table';
+import { TableHeader } from '../TableHeader';
+import { TableRow } from '../TableRow';
+import { TableCell } from './TableCell';
 
 export default {
-  title: "Components/TableCell",
+  title: 'Components/TableCell',
   component: TableCell,
   argTypes: {
-    backgroundColor: { control: "color" },
-    disabled: { control: "boolean" },
+    backgroundColor: { control: 'color' },
+    disabled: { control: 'boolean' },
   },
 };
 
 export const Default = {
-  args: { disabled: false, backgroundColor: "transparent" },
+  args: { disabled: false, backgroundColor: 'transparent' },
   render: (args: any) => (
     <Table>
       <TableHeader>
@@ -31,7 +31,7 @@ export const Default = {
 };
 
 export const Disabled = {
-  args: { disabled: true, backgroundColor: "transparent" },
+  args: { disabled: true, backgroundColor: 'transparent' },
   render: (args: any) => (
     <Table>
       <TableHeader>

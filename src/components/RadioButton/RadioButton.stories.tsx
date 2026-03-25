@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import { RadioButton } from "./RadioButton";
+import React, { useState } from 'react';
+import { RadioButton } from './RadioButton';
 
 export default {
-  title: "Components/RadioButton",
+  title: 'Components/RadioButton',
   component: RadioButton,
   argTypes: {
-    label: { control: "text" },
-    backgroundColor: { control: "color" },
-    disabled: { control: "boolean" },
+    label: { control: 'text' },
+    backgroundColor: { control: 'color' },
+    disabled: { control: 'boolean' },
   },
 };
 
@@ -24,17 +24,17 @@ export const Default = {
     );
   },
   args: {
-    label: "Radio",
-    backgroundColor: "#ffffff",
+    label: 'Radio',
+    backgroundColor: '#ffffff',
     disabled: false,
   },
 };
 
 export const Disabled = {
   args: {
-    label: "Disabled Radio",
-    backgroundColor: "#ffffff",
+    label: 'Disabled Radio',
+    backgroundColor: '#ffffff',
     disabled: true,
-    name: "demo",
+    name: 'demo',
   },
 };

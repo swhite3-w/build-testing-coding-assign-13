@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { TableProps } from "./Table.types";
+import React from 'react';
+import styled from 'styled-components';
+import { TableProps } from './Table.types';
 
 const Wrapper = styled.div<{
   $disabled?: boolean;
@@ -10,9 +10,9 @@ const Wrapper = styled.div<{
   overflow-x: auto;
   border-radius: 10px;
 
-  background: ${(p) => (p.$disabled ? "#e0e0e0" : p.$bg || "transparent")};
+  background: ${(p) => (p.$disabled ? '#e0e0e0' : p.$bg || 'transparent')};
   opacity: ${(p) => (p.$disabled ? 0.85 : 1)};
-  cursor: ${(p) => (p.$disabled ? "not-allowed" : "default")};
+  cursor: ${(p) => (p.$disabled ? 'not-allowed' : 'default')};
 `;
 
 const StyledTable = styled.table`
@@ -27,7 +27,11 @@ export const Table: React.FC<TableProps> = ({
   backgroundColor,
 }) => {
   return (
-    <Wrapper data-testid="table-wrapper" $disabled={disabled} $bg={backgroundColor}>
+    <Wrapper
+      data-testid="table-wrapper"
+      $disabled={disabled}
+      $bg={backgroundColor}
+    >
       <StyledTable aria-disabled={disabled}>{children}</StyledTable>
     </Wrapper>
   );

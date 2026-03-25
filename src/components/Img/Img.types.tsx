@@ -1,5 +1,5 @@
 export type ImgProps = {
-  "data-testid"?: string;
+  'data-testid'?: string;
   disabled?: boolean;
   backgroundColor?: string;
   src: string;

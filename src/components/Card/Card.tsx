@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { CardProps } from "./Card.types";
+import React from 'react';
+import styled from 'styled-components';
+import { CardProps } from './Card.types';
 
 const Wrap = styled.div<{ $disabled?: boolean; $bg?: string }>`
   box-sizing: border-box;
@@ -9,9 +9,9 @@ const Wrap = styled.div<{ $disabled?: boolean; $bg?: string }>`
   border-radius: 18px;
   border: 1px solid rgba(0, 0, 0, 0.15);
   padding: 1rem;
-  background-color: ${(p) => (p.$disabled ? "#cfcfcf" : p.$bg ?? "#ffffff")};
-  color: ${(p) => (p.$disabled ? "#6b6b6b" : "#111")};
-  cursor: ${(p) => (p.$disabled ? "not-allowed" : "default")};
+  background-color: ${(p) => (p.$disabled ? '#cfcfcf' : (p.$bg ?? '#ffffff'))};
+  color: ${(p) => (p.$disabled ? '#6b6b6b' : '#111')};
+  cursor: ${(p) => (p.$disabled ? 'not-allowed' : 'default')};
 `;
 
 const Title = styled.h3`
@@ -28,17 +28,17 @@ const Body = styled.p`
 export const Card: React.FC<CardProps> = ({
   disabled = false,
   backgroundColor,
-  title = "Card Title",
-  body = "Card body text",
+  title = 'Card Title',
+  body = 'Card body text',
   children,
   className,
-  "data-testid": testId,
+  'data-testid': testId,
 }) => (
   <Wrap
     className={className}
     $disabled={disabled}
     $bg={backgroundColor}
-    data-testid={testId ?? "card-root"}
+    data-testid={testId ?? 'card-root'}
   >
     <Title>{title}</Title>
     {children ?? <Body>{body}</Body>}

@@ -1,27 +1,27 @@
-import { Label } from "./Label";
+import { Label } from './Label';
 
 export default {
-  title: "Components/Label",
+  title: 'Components/Label',
   component: Label,
   argTypes: {
-    text: { control: "text" },
-    backgroundColor: { control: "color" },
-    disabled: { control: "boolean" },
+    text: { control: 'text' },
+    backgroundColor: { control: 'color' },
+    disabled: { control: 'boolean' },
   },
 };
 
 export const Default = {
   args: {
-    text: "Default Label",
-    backgroundColor: "transparent",
+    text: 'Default Label',
+    backgroundColor: 'transparent',
     disabled: false,
   },
 };
 
 export const Disabled = {
   args: {
-    text: "Disabled Label",
-    backgroundColor: "transparent",
+    text: 'Disabled Label',
+    backgroundColor: 'transparent',
     disabled: true,
   },
 };

@@ -1,5 +1,5 @@
 export type HeroImageProps = {
-  "data-testid"?: string;
+  'data-testid'?: string;
   disabled?: boolean;
   backgroundColor?: string;
   imageUrl: string;

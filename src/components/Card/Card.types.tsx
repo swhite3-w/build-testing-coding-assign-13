@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 export type CardProps = {
-  "data-testid"?: string;
+  'data-testid'?: string;
   disabled?: boolean;
   backgroundColor?: string;
   title?: string;

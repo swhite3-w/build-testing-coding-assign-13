@@ -1,5 +1,5 @@
 export type RadioButtonProps = {
-  "data-testid"?: string;
+  'data-testid'?: string;
   disabled?: boolean;
   backgroundColor?: string;
   label?: string;

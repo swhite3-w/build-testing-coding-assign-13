@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { ButtonProps } from "./Button.types";
+import React from 'react';
+import styled from 'styled-components';
+import { ButtonProps } from './Button.types';
 
 const StyledButton = styled.button<{
   $bg?: string;
@@ -13,10 +13,10 @@ const StyledButton = styled.button<{
   width: 100%;
   max-width: 320px;
 
-  background: ${(p) => (p.$disabled ? "#bdbdbd" : p.$bg || "#1976d2")};
-  color: ${(p) => (p.$disabled ? "#6b6b6b" : "#ffffff")};
+  background: ${(p) => (p.$disabled ? '#bdbdbd' : p.$bg || '#1976d2')};
+  color: ${(p) => (p.$disabled ? '#6b6b6b' : '#ffffff')};
 
-  cursor: ${(p) => (p.$disabled ? "not-allowed" : "pointer")};
+  cursor: ${(p) => (p.$disabled ? 'not-allowed' : 'pointer')};
   opacity: ${(p) => (p.$disabled ? 0.7 : 1)};
 
   @media (min-width: 480px) {

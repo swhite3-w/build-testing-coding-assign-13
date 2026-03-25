@@ -1,11 +1,11 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom";
-import { Table } from "../Table";
-import { TableFooter } from "./TableFooter";
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import { Table } from '../Table';
+import { TableFooter } from './TableFooter';
 
-describe("TableFooter", () => {
-  test("is visible", () => {
+describe('TableFooter', () => {
+  test('is visible', () => {
     render(
       <Table>
         <TableFooter>
@@ -15,10 +15,10 @@ describe("TableFooter", () => {
         </TableFooter>
       </Table>
     );
-    expect(screen.getByTestId("table-footer")).toBeVisible();
+    expect(screen.getByTestId('table-footer')).toBeVisible();
   });
 
-  test("background color changes when disabled", () => {
+  test('background color changes when disabled', () => {
     render(
       <Table>
         <TableFooter disabled={true}>
@@ -28,6 +28,8 @@ describe("TableFooter", () => {
         </TableFooter>
       </Table>
     );
-    expect(screen.getByTestId("table-footer")).toHaveStyle("background: #d6d6d6");
+    expect(screen.getByTestId('table-footer')).toHaveStyle(
+      'background: #d6d6d6'
+    );
   });
 });

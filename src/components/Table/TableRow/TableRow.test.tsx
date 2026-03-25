@@ -1,11 +1,11 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom";
-import { Table } from "../Table";
-import { TableRow } from "./TableRow";
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import { Table } from '../Table';
+import { TableRow } from './TableRow';
 
-describe("TableRow", () => {
-  test("is visible", () => {
+describe('TableRow', () => {
+  test('is visible', () => {
     render(
       <Table>
         <tbody>
@@ -15,10 +15,10 @@ describe("TableRow", () => {
         </tbody>
       </Table>
     );
-    expect(screen.getByTestId("table-row")).toBeVisible();
+    expect(screen.getByTestId('table-row')).toBeVisible();
   });
 
-  test("background color changes when disabled", () => {
+  test('background color changes when disabled', () => {
     render(
       <Table>
         <tbody>
@@ -28,6 +28,6 @@ describe("TableRow", () => {
         </tbody>
       </Table>
     );
-    expect(screen.getByTestId("table-row")).toHaveStyle("background: #ededed");
+    expect(screen.getByTestId('table-row')).toHaveStyle('background: #ededed');
   });
 });

@@ -1,13 +1,13 @@
-import { Button } from "./components/Button/Button";
-import { Label } from "./components/Label/Label";
-import { Text } from "./components/Text/Text";
-import { Table } from "./components/Table/Table";
+import { Button } from './components/Button/Button';
+import { Label } from './components/Label/Label';
+import { Text } from './components/Text/Text';
+import { Table } from './components/Table/Table';
 
-import { Img } from "./components/Img/Img";
+import { Img } from './components/Img/Img';
 
 function App() {
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial" }}>
+    <div style={{ padding: '20px', fontFamily: 'Arial' }}>
       <h1>UI Component Library Demo</h1>
 
       {/* BUTTON */}

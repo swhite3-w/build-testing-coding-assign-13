@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { LabelProps } from "./Label.types";
+import React from 'react';
+import styled from 'styled-components';
+import { LabelProps } from './Label.types';
 
 const StyledLabel = styled.span<{
   $bg?: string;
@@ -12,10 +12,10 @@ const StyledLabel = styled.span<{
   font-size: 0.95rem;
   line-height: 1.2;
 
-  background: ${(p) => (p.$disabled ? "#e0e0e0" : p.$bg || "transparent")};
-  color: ${(p) => (p.$disabled ? "#7a7a7a" : "#111")};
+  background: ${(p) => (p.$disabled ? '#e0e0e0' : p.$bg || 'transparent')};
+  color: ${(p) => (p.$disabled ? '#7a7a7a' : '#111')};
 
-  cursor: ${(p) => (p.$disabled ? "not-allowed" : "default")};
+  cursor: ${(p) => (p.$disabled ? 'not-allowed' : 'default')};
 
   max-width: 100%;
   word-break: break-word;

@@ -1,15 +1,19 @@
-import React from "react";
-import styled from "styled-components";
-import { HeroImageProps } from "./HeroImage.types";
+import React from 'react';
+import styled from 'styled-components';
+import { HeroImageProps } from './HeroImage.types';
 
-const Wrap = styled.section<{ $disabled?: boolean; $bg?: string; $img: string }>`
+const Wrap = styled.section<{
+  $disabled?: boolean;
+  $bg?: string;
+  $img: string;
+}>`
   box-sizing: border-box;
   width: 100%;
   border-radius: 18px;
   overflow: hidden;
-  background-color: ${(p) => (p.$disabled ? "#cfcfcf" : p.$bg ?? "#111")};
-  cursor: ${(p) => (p.$disabled ? "not-allowed" : "default")};
-  filter: ${(p) => (p.$disabled ? "grayscale(1)" : "none")};
+  background-color: ${(p) => (p.$disabled ? '#cfcfcf' : (p.$bg ?? '#111'))};
+  cursor: ${(p) => (p.$disabled ? 'not-allowed' : 'default')};
+  filter: ${(p) => (p.$disabled ? 'grayscale(1)' : 'none')};
   min-height: clamp(180px, 35vw, 420px);
   display: flex;
   align-items: flex-end;
@@ -40,17 +44,17 @@ export const HeroImage: React.FC<HeroImageProps> = ({
   disabled = false,
   backgroundColor,
   imageUrl,
-  title = "Hero Title",
-  subtitle = "Hero subtitle text",
+  title = 'Hero Title',
+  subtitle = 'Hero subtitle text',
   className,
-  "data-testid": testId,
+  'data-testid': testId,
 }) => (
   <Wrap
     className={className}
     $disabled={disabled}
     $bg={backgroundColor}
     $img={imageUrl}
-    data-testid={testId ?? "hero-root"}
+    data-testid={testId ?? 'hero-root'}
   >
     <Overlay>
       <Title>{title}</Title>
