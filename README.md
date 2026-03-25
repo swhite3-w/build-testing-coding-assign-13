@@ -1,21 +1,72 @@
-# Docker Run Instructions
+# Assignment 13 – UI Garden Build Checks
 
-These instructions will run the site on **localhost:8083 (127.0.0.1:8083)** using Docker.
-Make sure Docker is installed and running before starting.
+## Overview
+This project extends the UI Component Library by adding automated code quality checks and containerizing the production build using Docker.
 
-Run all commands from the project root (where the Dockerfile is located).
+The application runs at:
+http://localhost:8018
 
-Build the Docker image:
-docker build -t ui-library .
+---
 
-Run the container:
-docker run --rm --name white_sakaria_coding_assignment12 -p 8083:3000 ui-library
+## Features
+- Production build of React app served via Docker
+- Husky pre-commit hooks
+- Code quality checks:
+  - Prettier
+  - ESLint
+  - Tests
+- GitHub Actions CI to enforce checks on push/pull requests
 
-This maps container port 3000 to host port 8083.
+---
 
-Open the application in your browser:
-http://127.0.0.1:8083
+## Pre-Commit Checks (Husky)
 
-If you make changes and need to rebuild:
-docker build --no-cache -t ui-library .
-docker run --rm --name white_sakaria_coding_assignment12 -p 8083:3000 ui-library
+A pre-commit hook prevents commits if any of the following fail:
+
+```bash
+npm run format:check
+npm run lint
+npm run test -- --watchAll=false
+```
+
+Location:
+
+.husky/pre-commit
+
+## GitHub Actions
+
+A CI workflow ensures checks run even if Husky is bypassed.
+
+File:
+.github/workflows/ci.yml
+
+Runs:
+
+-Prettier check
+-ESLint
+-Tests
+-Build
+
+## Docker Setup
+
+Build Image
+```bash
+docker build -t White_Sakaria_coding_assignment13 .
+```
+
+Run Container
+```bash
+docker run -d -p 8018:8018 \
+  --name White_Sakaria_coding_assignment13 \
+  White_Sakaria_coding_assignment13
+```
+
+## Access the Application
+
+Open:
+http://localhost:8018
+
+## Notes
+- Container name: White_Sakaria_coding_assignment13
+- Working directory inside container: White_Sakaria_ui_garden_build_checks
+- App runs on port 8018 as required

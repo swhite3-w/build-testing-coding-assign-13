@@ -1,33 +1,39 @@
-FROM node:20-alpine AS build
+# ---------- Build stage ----------
+FROM node:20-alpine AS builder
 
-WORKDIR /white_sakaria_ui_garden
+ARG LAST_NAME=White
+ARG FIRST_NAME=Sakaria
 
+WORKDIR /${LAST_NAME}_${FIRST_NAME}_ui_garden_build_checks
+
+# Copy package files first for better caching
 COPY package*.json ./
-RUN npm ci
 
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the project
 COPY . .
+
+# Build the production version of the app
 RUN npm run build
-RUN npm run build-storybook
 
-FROM nginx:1.27-alpine
 
-WORKDIR /white_sakaria_ui_garden
+# ---------- Production stage ----------
+FROM node:20-alpine
 
-COPY --from=build /white_sakaria_ui_garden/storybook-static/ ./
+ARG LAST_NAME=White
+ARG FIRST_NAME=Sakaria
 
-RUN rm /etc/nginx/conf.d/default.conf && \
-    printf '%s\n' \
-    'server {' \
-    '  listen 8083;' \
-    '  server_name localhost;' \
-    '  root /white_sakaria_ui_garden;' \
-    '  index index.html;' \
-    '  location / {' \
-    '    try_files $uri $uri/ /index.html;' \
-    '  }' \
-    '}' \
-    > /etc/nginx/conf.d/ui-garden.conf
+WORKDIR /${LAST_NAME}_${FIRST_NAME}_ui_garden_build_checks
 
-EXPOSE 8083
+# Install a lightweight static file server
+RUN npm install -g serve
 
-CMD ["nginx", "-g", "daemon off;"]
+# Copy production build from builder
+COPY --from=builder /${LAST_NAME}_${FIRST_NAME}_ui_garden_build_checks/build ./build
+
+EXPOSE 8018
+
+# Serve the production build on port 8018
+CMD ["serve", "-s", "build", "-l", "8018"]
