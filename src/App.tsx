@@ -55,8 +55,8 @@ function App() {
       </section>
     </div>
   );
+  const x=1
 
-  const broken =
 }
 
 export default App;
