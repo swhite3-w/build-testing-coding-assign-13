@@ -14,24 +14,15 @@ describe('Dropdown', () => {
 
   test('background color changes when disabled', () => {
     const { rerender } = render(
-      <Dropdown
-        options={options}
-        disabled={false}
-        data-testid="dropdown-root"
-      />
+      <Dropdown options={options} disabled={false} />
     );
 
-    const select = screen
-      .getByTestId('dropdown-root')
-      .querySelector('select') as HTMLElement;
+    const select = screen.getByRole('combobox');
     const bgDefault = getBg(select);
 
-    rerender(
-      <Dropdown options={options} disabled={true} data-testid="dropdown-root" />
-    );
-    const selectDisabled = screen
-      .getByTestId('dropdown-root')
-      .querySelector('select') as HTMLElement;
+    rerender(<Dropdown options={options} disabled={true} />);
+
+    const selectDisabled = screen.getByRole('combobox');
     const bgDisabled = getBg(selectDisabled);
 
     expect(bgDisabled).not.toEqual(bgDefault);

@@ -55,6 +55,8 @@ function App() {
       </section>
     </div>
   );
+
+  const x = 1;
 }
 
 export default App;
