@@ -1,8 +1,8 @@
 # ---------- Build stage ----------
 FROM node:20-alpine AS builder
 
-ARG LAST_NAME=White
-ARG FIRST_NAME=Sakaria
+ARG LAST_NAME=white
+ARG FIRST_NAME=sakaria
 
 WORKDIR /${LAST_NAME}_${FIRST_NAME}_ui_garden_build_checks
 
@@ -22,8 +22,8 @@ RUN npm run build
 # ---------- Production stage ----------
 FROM node:20-alpine
 
-ARG LAST_NAME=White
-ARG FIRST_NAME=Sakaria
+ARG LAST_NAME=white
+ARG FIRST_NAME=sakaria
 
 WORKDIR /${LAST_NAME}_${FIRST_NAME}_ui_garden_build_checks
 

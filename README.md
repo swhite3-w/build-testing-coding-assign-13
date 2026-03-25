@@ -51,14 +51,14 @@ Runs:
 
 Build Image
 ```bash
-docker build -t White_Sakaria_coding_assignment13 .
+docker build -t white_sakaria_coding_assignment13 .
 ```
 
 Run Container
 ```bash
 docker run -d -p 8018:8018 \
   --name White_Sakaria_coding_assignment13 \
-  White_Sakaria_coding_assignment13
+  white_sakaria_coding_assignment13
 ```
 
 ## Access the Application
