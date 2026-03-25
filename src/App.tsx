@@ -56,7 +56,7 @@ function App() {
     </div>
   );
 
-  const broken=
+  const broken =
 }
 
 export default App;
