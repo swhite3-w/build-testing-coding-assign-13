@@ -56,7 +56,7 @@ function App() {
     </div>
   );
 
-  const x = 1;
+  const x=1
 }
 
 export default App;
